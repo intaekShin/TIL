@@ -1,0 +1,13 @@
+.font {
+    /* 1.font-size */
+    font-size: 40px;
+    /* 2.font-style  weight는 굵기. 100~900정도 사용. 700이 일반적.*/
+    font-style: italic;
+    font-weight: 700; /* =bold */
+    /* 글씨체 첫번째가 적용이 안되면 다음 서체로 넘어간다. serif는 언어에 관계없이 다 적용가능한 서체. */
+    /* font-family: 'Times New Roman', Times, serif */
+    font-family: 'Lora', serif;
+    line-height: 60px; /* 줄간격 */
+    letter-spacing: 4px; /* 글자간격 */
+    text-align: center;
+}

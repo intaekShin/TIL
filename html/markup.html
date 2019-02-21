@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table, tr, td {
+            border: 1px solid darkgray;
+        }
+    </style>
+</head>
+<body>
+    <h1>프로그래밍 교육</h1>
+    <a href="#python"><img src="images/mumin.png" alt="mumin" width="50px" height="50px"></a>
+    <a href="#web"><img src="images/apeach.jpg" alt="rion" width="50px" height="50px"></a>
+    <a href="index.html" target ="_self">참고사이트</a>
+    <hr>
+    <section id="python">
+        <h2>
+            <a href="https://docs.python.org/ko/3/tutorial/index.html" target="_blank">파이썬</a>
+        </h2>
+        <h3>Number type</h3>
+        <p>
+            파이썬에서 숫자형은 아래와 같이 있다.
+        <ol>
+            <li>int</li>
+            <li>float</li>
+            <li>complex</li>
+            <li><del>str</del></li>
+        </ol>
+        <h3>Sequence</h3>
+        파이썬에서 시퀀스는 아래와 같이 있다.
+        <h4>시퀀스는 for문을 돌릴 수 있다!!</h4>
+        <ol>
+            <li>str</li>
+            <li>list</li>
+            <li>tuple</li>
+            <li>range</li>
+        </ol>
+        </p>
+    <hr>
+    </section>
+    
+    <section id="web">
+
+        <a href="https://developer.mozilla.org/ko/" target="_self">
+            <h2>
+                웹
+            </h2>
+        </a>
+            <h3>기초</h3>
+
+            <!-- none, square, circle, lower-alpha, upper-alpha, upper-roman, ... -->
+            <!-- 1. Inline style(인라인 스타일) ul태그를 입력 했기 때문에 선택자가 필요 없다.-->
+            <ul style ="list-style-type : circle;">
+                <li >HTML</li>
+                <li>CSS</li>
+            </ul>
+    </section>
+    
+    <section id="link">
+            <!-- a(anchor) -->
+            <!-- href values
+                1. 절대 URL 구글 닷컴 같은 다른 컴퓨터 주소.
+                2. 상대 URL 지금 이 파일이 지정된 위치.같은 것.
+                3. element id : 요소들은 고유 아이디값을 가질 수 있다. 현재 페이지 내에서 스크롤이 다른 곳으로 간다던가.
+                4. mailto: mail을 실행시켜주는.
+            -->
+            <a href="https://www.google.com" target="_self">절대 URL</a><br>
+            <a href="index.html" target="_blank">상대 URL</a><br>
+            <a href="#python">파이썬으로(id python)Element ID</a><br>
+            <a href="mailto:no.water.in.the.house@gmail.com">메일 보내기</a>   
+    </section>
+
+    <section>
+        <!-- img -->
+        <!-- src : 파일 경로, alt : 이미지 설명, width: 가로 길이, height : 세로 길이 -->
+        <img src="images/nak.jpg" alt="nakdongriver" width="400px" height="300px">
+        <!-- video controls없으면 제어가 불가능!-->
+        <video src="../html/images/penguin.mp4" width="300px" height="" controls></video>
+
+        <!-- iframe 소스 코드 복사.-->
+        <iframe width="1252" height="704" src="https://www.youtube.com/embed/KBouh6xLbdo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
+
+    <section>
+        <!-- table table>tr*3>td*4 한번에 다 만들어짐. 꿀팁!-->       
+        <table>
+            <!-- table row -->
+            <tr>
+                <!-- table head -->
+                <th></th>
+                <th>월</th>
+                <th>화</th>
+                <th>수</th>
+            </tr>
+            <tr>
+                <!-- table data -->
+                <td>A 코스</td>
+                <!-- rowspan : 세로 칸 길이 셀 병합 -->
+                <td rowspan="2">짬뽕</td>
+                <!-- colspan : 가로 칸 길이 셀 병합 -->
+                <td colspan="2">불고기백반</td>
+            </tr>
+            <tr>
+                <td>B 코스</td>
+                <td>샤브샤브</td>
+                <td>랍스터</td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <th>TIME</th>
+                <th>INDOOR</th>
+                <th colspan="2">OUTDOOR</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td>소극장</td>
+                <td>잔디마당</td>
+                <td>대공연장</td>
+            </tr>
+            <tr>
+                <td>10:00</td>
+                <td rowspan="2">안녕하신가영</td>
+                <td></td>
+                <td>10CM</td>
+            </tr>
+            <tr>
+                <td>13:00</td>
+                <td rowspan="2">선우정아</td>
+                <td rowspan="2">참깨와 솜사탕</td>
+            </tr>
+            <tr>
+                <td>15:00</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>17:00</td>
+                <td>크러쉬</td>
+                <td></td>
+                <td>폴킴</td>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <!-- form , action: 데이터 전송 목적지-->
+        <form action="" method="GET">
+            <input type="text" value="아이디"><br>
+            <input type="password"><input type="submit" value="로그인"><br>
+            <input type="number" min="15" max="30" step="5">
+            <!-- radio -->
+            <div><!--  공간을 나누는 의미 없는 태그  -->
+            <!-- name이 중복이 안되는 속성을 이용하여 중복체크 기능을 방지한다. -->
+                <input type="radio" name="sandwich" checked>에그 마요<br>
+                <input type="radio" name="sandwich">이탈리안 비엠티<br>
+                <input type="radio" name="sandwich">터키 베이컨 아보카도<br>
+            </div>
+            <!-- checkbox -->
+            <!-- toggle이 되는 네모난 단추, 데이터를 넘길 때 name이 유용.-->
+            <div>
+                <input type="checkbox" name="topping" checked>토마토<br>
+                <input type="checkbox" name="topping">오이<br>
+                <input type="checkbox" name="topping">페퍼로니<br>
+                <input type="checkbox" name="topping">핫 칠리<br>
+                <input type="checkbox" name="topping">할라피뇨<br>
+            </div>
+            <!-- select -->
+            <select name="" id="">
+                <option>허니오트</option>
+                <option disabled>플랫브레드</option>
+                <option selected>파마산 오레가노</option>
+            </select>
+
+            
+        </form>
+    </section>
+
+    <a href="https://www.ssafy.com" target="_blank">ssafy</a>
+    <img src="data:image/jpeg;base64,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" alt="Mountain">
+    <a href="images/my_photo.jpg">산</a>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* p라는 태그가 부모의 두번째 자식일 때만 적용이된다. 위치고정값 */
+        #ssafy > p:nth-child(2) {
+            color: red;
+        }
+        /* p들 중에 2번째 자식을 적용시킨다. 순서고정값*/
+        #ssafy > p:nth-of-type(2) {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="ssafy">
+        <p>첫번째 단락</p>
+        <h2>어떤게 선택될까?</h2>
+        <p>두번째 단락</p>
+        <h2>어떤게 선택될까?</h2>
+        <p>세번째 단락</p>
+        <p>네번째 단락</p>
+    </div>
+</body>
+</html>
