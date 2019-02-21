@@ -13,10 +13,10 @@ for t in range(1, T+1):
     top = -1
 
     for lett in range(len(Data)):
-        # print(lett)
+        # print(lett)   # 진행 상황 확인
         top = top + 1
         Stack[top] = Data[lett]
-        if Stack[top] == Stack[top-1]:
+        if Stack[top] == Stack[top-1]:  # 마지막 글자와 그 전 글자가 반복인지 확인 한다. top을 기준으로 하는 것이 핵심!
             # print(Stack[top], Stack[top-1]) # 빼는 글자 확인
             Stack.pop(top)
             Stack.pop(top-1)
