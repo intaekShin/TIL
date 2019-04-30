@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- JS 위치 1 -->
+</head>
+<body>
+    <!-- JS 위치 2 body 가장 마지막 부분에 위치-->
+    <script> // 브라우저 조작, 돔 조작을 쓸 공간. 
+        /*
+            여러 줄의 주석.
+            This is Comment 
+            // 한 줄 짜리 주석.
+        */
+        //alert('Welcome to JS!') // 알람을 띄움.
+
+        // 문서에 출력하기
+        document.write('<h1>Hello, World!</h1>')
+
+        // 변수 선언
+        // let : 재할당 가능
+        let word1 = '외안되' // let은 새로운 값을 할당 할 수 있어요.
+        document.write(word1);
+
+        // const : 재할당 불가능    상수로서 이 변수를 정의.
+        const word2 = '왜안돼'
+        document.write(word2);
+
+        /*
+        const word2
+        word2 = '아무 내용' (여러 줄)형식으로 프로그래밍이 되지 않음.
+        */
+        
+        // word = '왜안돼'
+        // document.write(word)
+
+        const firstName = 'happy'   // const에 숫자뿐만 문자도 가능.
+        const lastName = 'hacking'
+        const fullName = firstName + lastName   // + 통해서 두 개의 문자열을 더할 수 있음.
+        document.write('<h1>' + fullName + '!!' + '</h1>')
+        document.write(`<h1>${fullName}!!</h1>`)  // 백틱을 이용. 포매팅이 가능.
+        // $를 통해 변수 또는 연산 값을 집어넣을 수 있음. ES6부터 사용 가능.
+
+        // console에 출력하기
+        console.log(`Console : ${fullName}`)
+
+        // 사용자 입력 받기
+        // Python : user_name (snake_case)
+        // JS : userName (CamelCase)    관용화 되어있는 변수명 짓는 방법.
+        const userName = prompt('Hello! Who are you?')
+        let message = ''
+        // if문,  // if 문은 '=' 3개, 괄호와 중괄호 필요하고 else if 줄이지 말고 써야한다.
+        if (userName === '') {
+            message = '<h1>This is secret Admin page</h1>'
+        } else if (userName === 'nwith') {
+            message = '<h1>No water in the house?</h1>'
+        } else {
+            message = `<h1>Hello ${userName}</h1>`
+        }
+
+        // == vs. ===
+        // == : '값'만 비교 (ex. 0 == "0" 는 true)
+        // === : '값' & '타입' 비교 (ex. 0 === "0" 는 false)    strict 비교 연산자. 파이썬에서의 == 과 같음.
+
+        document
+            .write(message)
+
+        // 삼항 연산자
+        const number = 10
+        number === 10 ? document.write('number === 10') : document.write('number !== 10')
+
+        // 세미콜론 테스트
+        const a = 1
+        const b = 2
+        const c = a + b;
+
+        (a+b).toString()
+        // 줄을 띄워도 한 줄로 인식하기 때문에 변수 선언 이후 바로 수식이 들어가면 세미콜론으로 분기점을 만들어주자.
+
+        
+        
+    </script>
+</body>
+</html>
