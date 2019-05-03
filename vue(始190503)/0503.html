@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id = "app">    <!-- app으로 지정된 곳 안에 작성.-->
+        {{ message }} - {{ count }}
+        <p v-if="checked">이건 보임.</p>
+        <li v-for="post in posts">
+            {{ post }}
+        </li>
+        <li v-for="info in Object.keys(student)">
+            {{ info }}
+        </li>
+    </div>
+
+
+    <script>
+        const app = new Vue({
+            el: '#app', // el = element 의 약자 , 어디에를 뜻함.
+            data : { // 무엇을
+                message: 'Hello, Vue!',
+                count: 0, 
+                checked: true,
+                posts: ['첫 게시물', '두번째 게시물', '세번째!'],
+                student: {
+                    name: 'nwith',
+                    univ: 'KNU',
+                },
+            },
+            methods: { // 어떻게
+                // this.message 
+                plus: function(){   // function은 익명 함수.
+                    this.count++
+                }
+            }
+        })
+    </script>
+</body>
+</html>

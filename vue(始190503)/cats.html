@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <style>
+        img {
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button v-on:click="getCatImage">MeUMeU</button>
+        <div>
+            <img v-bind:src="imageURL" alt="cat image">
+        </div>
+    </div>
+    
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                imageURL: '',
+            },
+            methods: {
+                getCatImage: function(){
+                    axios.get('https://api.thecatapi.com/v1/images/search')
+                        .then((response) => { // arrow function 기존 익명 함수와 미묘하게 다르다.만 여기서는 같다고 취급해봐요.
+                            this.imageURL = response.data[0].url    // 실제 고양이 사진이 들어간 주소. this를 사용하기 위해 arrow function을 사용한다.
+                        })
+                }
+            }
+        })
+    </script>
+
+</body>
+</html>
