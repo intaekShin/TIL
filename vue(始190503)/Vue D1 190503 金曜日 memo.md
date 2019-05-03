@@ -418,7 +418,7 @@ v-bind: src가 붙은 태그에는 중괄호 문법을 못쓰기 때문에 v-bin
 *  다음은 Vue 인스턴스를 사용하여 렌더링한 DOM의 결과물이다.
   위와 같이 렌더링 하기 위하여 필요한 (a), (b)를 작성하여 Vue 인스턴스를 완성하시오
 
-(a) : {{ message }}, (b) : #app
+(a) : `{{ message }}`, (b) : `#app`
 
 ### 0501workshop
 
@@ -432,7 +432,8 @@ v-bind: src가 붙은 태그에는 중괄호 문법을 못쓰기 때문에 v-bin
 
 ```html
 <div>
-    <li v-for="number in numbers" v-if="!number//2">
+    <li v-for="number in numbers" v-if="number % 2 == 0">
+     // or<li v-for="number in numbers" v-if="!(number % 2)">  
     	{{ number }}
     </li>
 </div>
@@ -446,13 +447,27 @@ v-bind: src가 붙은 태그에는 중괄호 문법을 못쓰기 때문에 v-bin
 *  Vue.js
 
 1. SPA가 무엇의 약자인지 작성하고, 어떤 것을 의미하는지 간략하게 작성하시오.
-   single-page application의 약자.
+
+   ```
+   single-page application의 약자. 단 하나의 페이지로서만 작성된 것.
+   
    서버로부터 완전한 새로운 페이지를 불러오지 않고 현재의 페이지를 ``동적으로 다시 작성함``으로써 사용자와 소통하는 웹 애플리케이션이나 웹사이트를 말한다.
+   ```
+
+   
+
+   
 
 2. 'MVVM 패턴'에서 MVVM은 무엇의 약자인지 작성하고, 그 중에서 Vuejs가 담당하는 부분은 무엇인지 간략 하게 작성하시오.
 
+   ```
    Model-View-View-Model 의 약자.
    View-Model을 담당해서 데이터가 오고 가는 것을 중간에 제어한다.
+   ```
+
+   
+
+   
 
 
 
@@ -462,7 +477,9 @@ v-bind: src가 붙은 태그에는 중괄호 문법을 못쓰기 때문에 v-bin
 * v-bind, v-for, v-if 디렉티브
 
 1. html 속성(attributes)에는 인터폴레이션(Interpolation)으로 값을 직접 넣지 못하기 때문에 디렉티브 ____(a)____를 사용해야 한다. 빈칸 (a)에 들어갈 디렉티브를 작성하시오.
-   v
+   * 인터폴레이션(Interpolation) : 보간법
+     * f string 처럼 중간 중간 에 뭐 갖다 넣는 거에요.
+   * Answer : `v-bind`
 2. 동일한 노드에 ____(a)____와 ____(b)____ 두 디렉티브가 함께 있다면 ____(a)____가 ____(b)____보다 높은 우선 순위를 가지며, ____(b)____는 루프가 반복될 때마다 실행됩니다. 빈칸 (a), (b)에 들어갈 디렉티브를 작성 하시오.
-   (a) : v-for , (b): v-if
+   (a) : `v-for` , (b): `v-if`
 
