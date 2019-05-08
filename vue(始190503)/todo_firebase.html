@@ -6,6 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+    <!-- VueFire -->
+    <script src="https://unpkg.com/vuefire/dist/vuefire.js"></script>
+    <script>
+    // Initialize Firebase
+    // TODO: Replace with your project's customized code snippet
+    var config = {
+        apiKey: "AIzaSyDpDsBIaBGezsleOkiecXEGymfXXv53ick",
+        authDomain: "vue-todo-c6852.firebaseapp.com",
+        databaseURL: "https://vue-todo-c6852.firebaseio.com",
+        projectId: "vue-todo-c6852",
+    };
+    firebase.initializeApp(config);
+    </script>
+     
     <style>
         .completed {
             text-decoration: line-through;
@@ -20,9 +35,9 @@
             <option value="active">Active</option>
             <option value="completed">Complete~d</option>
         </select>
-        <ul>
+        <ul>      
             <li v-for="todo in todosByStatus" v-bind:key="todo.id" ><!-- v-if="!todo.completed" v-on:click="check(todo)" -->
-                <input type="checkbox" v-model="todo.completed">
+                <input type="checkbox" v-model="todo.completed" v-on:change="updateTodo(todo)">
                 <!-- "todo.completed ? 'completed':'''" -->
                 <span v-bind:class="{completed: todo.completed}">{{ todo.content }}</span>
             </li>
@@ -32,7 +47,6 @@
             <!-- <div v-bind:style="{color: newTodo, fontSize: '30px'}">
                 <span>Red Text, 30px</span>
             </div> -->
-            <span>{{ reverseNewTodo }}</span>
         </ul>
         <div>
             <input type="text" v-model="newTodo" v-on:keyup.enter="addTodo">
@@ -44,40 +58,45 @@
     </div>
 
     <script>
+        const database = firebase.database()
+
         const app = new Vue({
             el: '#app',
             data: {
                 status: 'all', // 임의로 정한 all 값.
                 newTodo: '',
-                todos: [
-                    {
-                        id : 1,
-                        content: '점심 메뉴 고민하기',
-                        completed: true,
-                    },
-                    {
-                        id : 2,
-                        content: '사다리 타기',
-                        completed: false,
-                    },   
-                    {
-                        id : 3,
-                        content: '약속의 2시, 낮잠자기',
-                        completed: false,
-                    },   
-                    {
-                        id : 4,
-                        content: '야자하기',
-                        completed: false,
-                    },
-                ]
+                // todos: [
+                //     {
+                //         id : 1,
+                //         content: '점심 메뉴 고민하기',
+                //         completed: true,
+                //     },
+                //     {
+                //         id : 2,
+                //         content: '사다리 타기',
+                //         completed: false,
+                //     },   
+                //     {
+                //         id : 3,
+                //         content: '약속의 2시, 낮잠자기',
+                //         completed: false,
+                //     },   
+                //     {
+                //         id : 4,
+                //         content: '야자하기',
+                //         completed: false,
+                //     },
+                // ]
+            },
+            firebase: {
+                todos: database.ref('todos'),
             },
             methods: {
                 check: function(todo){
                     todo.completed = !todo.completed
                 },
                 addTodo: function(){
-                    this.todos.push({
+                    this.$firebaseRefs.todos.push({
                         id: Date.now(),
                         content: this.newTodo,
                         completed: false, 
@@ -86,16 +105,23 @@
                 },
                 // 핵심은 '.filter'의 사용!
                 clearCompleted: function(){
-                    const notCompletedTodos = this.todos.filter((todo)=>{
-                        return !todo.completed
+                    const completedTodos = this.todos.filter((todo)=>{
+                        return todo.completed
                     }) // [{...},{...}]
-                    this.todos = notCompletedTodos
+                    
+                    completedTodos.forEach((todo)=>{
+                        this.$firebaseRefs.todos.child(todo['.key']).remove()
+                    })
+                },
+                updateTodo: function(todo){
+                    // todo = {'content': 'hi', completed: true}
+                    // {'content': 'hi', completed: true} 괄호 버리기
+                    const newTodo = { ...todo } // todo가 오게 될텐데 이 ... 은 스프레드오버레이터, spread operator. 복사본을 만들기 위해서(deepcopy의 역할)
+                    delete newTodo['.key'] // 알맹이?? 이해 안됨.
+                    this.$firebaseRefs.todos.child(todo['.key']).set(newTodo) // firebase vuefire 의 사용법 중 하나. 업데이트 하겠다. 앞의 것을 뒤의 것으로.
                 },
             },
             computed: {
-                reverseNewTodo: function(){
-                    return this.newTodo.split("").reverse().join("")
-                },
                 todosByStatus: function(){
                     if (this.status === 'active') {
                         return this.todos.filter((todo)=>{
