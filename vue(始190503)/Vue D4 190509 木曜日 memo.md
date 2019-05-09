@@ -318,5 +318,12 @@ deleteComment: function(music, comment){  // parameter에 댓글과 음악에 �
   개요 - HTTP 요청은 기본적으로 Cross-Site HTTP Requests가 가능하다.
    다시 말하면, <img> 태그로 다른 도메인의 이미지 파일을 가져오거나, <link> 태그로 다른 도메인의 CSS를 가져오거나, <script> 태그로 다른 도메인의 JavaScript 라이브러리를 가져오는 것이 모두 가능하다.
    하지만 <script></script>로 둘러싸여 있는 `스크립트`에서 생성된 Cross-Site HTTP Requests는 `Same Origin Policy`를 적용 받기 때문에 Cross-Site HTTP Requests가 불가능하다.
-   AJAX가 널리 사용되면서 <script></script>로 둘러싸여 있는 스크립트에서 생성되는 XMLHttpRequest에 대해서도 Cross-Site HTTP Requests가 가능해야 한다는 요구가 늘어나자 W3C에서 CORS라는 이름의 권고안이 나오게 되었다. 
-* AJAX
+   AJAX가 널리 사용되면서 <script></script>로 둘러싸여 있는 스크립트에서 생성되는 `XMLHttpRequest`에 대해서도 Cross-Site HTTP Requests가 가능해야 한다는 요구가 늘어나자 W3C에서 CORS라는 이름의 권고안이 나오게 되었다. 
+* AJAX(Asynchronous JavaScript and XML,  에이잭스) : 비동기적인 웹 애플리케이션의 제작을 위해 아래와 같은 조합을 이용하는 웹 개발 기법이다.
+  * 표현 정보를 위한 HTML (또는 XHTML) 과 CSS.
+  * 동적인 화면 출력 및 표시 정보와의 상호작용을 위한 DOM, 자바스크립트.
+  * 웹 서버와 비동기적으로 데이터를 교환하고 조작하기 위한 XML, XSLT, XMLHttpRequest.
+  * 기존 기술과의 차이점: 기존의 웹 애플리케이션은 브라우저에서 폼을 채우고 이를 웹 서버로 제출(submit)을 하면 //하나의 요청으로 웹 서버는 요청된 내용에 따라서 데이터를 가공하여 //새로운 웹 페이지를 작성하고 응답으로 되돌려준다.// 이 때, 최초에 폼을 가지고 있던 페이지와 사용자가 이 폼을 채워 //결과물로서 되돌려 받은 페이지는// 일반적으로 유사한 내용을 가지고 있는 경우가 많다. 
+  * 반면에 Ajax 애플리케이션은 필요한 데이터만을 웹서버에 요청해서 받은 후 클라이언트에서 데이터에 대한 처리를 할 수 있다.  
+* SQL (Structured Query Language, 구조화 질의어) : `관계형 데이터베이스 관리 시스템(RDBMS)`의 `데이터를 관리하기 위해` 설계된 특수 목적의 프로그래밍 언어이다. 
+* SOAP(Simple Object Access Protocol) :  일반적으로 HTTP, HTTPS, SMTP 등을 통해 XML 기반의 메시지를 컴퓨터 네트워크 상에서 교환하는 프로토콜이다. 
