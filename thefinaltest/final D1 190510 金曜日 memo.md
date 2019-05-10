@@ -7,7 +7,7 @@
 ```
 mkdir django
 cd django
-python -V
+python -V(대문자)
 Python 3.5.3
 mkdir api
 cd api
@@ -260,6 +260,7 @@ const app = new Vue({
 * Linux: 유닉스라는 운영 체계를 개인용 컴퓨터에서도 작동할 수 있게 만든 운영 체계.
   인터넷을 통해 프로그램 소스 코드를 완전 무료로 공개하여 사용자는 원하는 대로 특정 기능을 추가할 수 있을 뿐만 아니라, 어느 플랫폼에도 포팅(??)이 가능하다.
 * 소스 코드: 원시코드라고도 한다. 컴퓨터의 소프트웨어를 개발할 때 그 안에 들어가는 모든 동작의 코드를 총체적으로 일컫는 말.
+  
   * <https://terms.naver.com/entry.nhn?docId=3597396&cid=58598&categoryId=59316>
 * Diff: 두 개의 파일 간 차이에 대한 정보를 출력하는 파일 비교 유틸리티이다.
   일반적으로 하나의 파일 버전과 동일한 파일의 다른 버전 간의 변경 사항을 보여주는 데 쓰인다.
@@ -285,6 +286,7 @@ const app = new Vue({
 * 모뎀(MODEM): 아날로그 신호의 통신 회선인 전화선을 이용하여 디지털 통신 장비와 통신할 때 디지털 신호를 아날로그 신호로 변화시켜 주는 것을 변조(modulation)라고 하고, 그 반대의 경우를 복조(demodulation)라고 한다. 모뎀을 변복조기라고도 한다.
 * axios(악시오스): axios는 현재 가장 성공적인 HTTP 클라이언트 라이브러리 중 하나입니다.
 * **Ajax**(**A**synchronous [**J**avaScript](https://ko.wikipedia.org/wiki/자바스크립트) **a**nd [**X**ML](https://ko.wikipedia.org/wiki/XML), 에이잭스): 비동기적인 [웹 애플리케이션](https://ko.wikipedia.org/wiki/웹_애플리케이션)의 제작을 위해 아래와 같은 **조합**을 이용하는 [웹](https://ko.wikipedia.org/wiki/월드_와이드_웹) 개발 기법이다.(이하 생략)
+  
   * 함께 사용하는 기술의 묶음을 지칭함.
 * DOM(Document Object Model) : 문서 객체 모델은 객체 지향 모델로써 구조화된 문서를 표현하는 형식이다.
   플랫폼/언어 중립적으로 구조화된 문서를 표현하는 W3C의 공식 문서이다. 
@@ -296,4 +298,5 @@ const app = new Vue({
 * CSS(Cascading Style Sheets): 마크업 언어가 실제 표시되는 방법을 기술하는 언어. 레이아웃과 스타일을 정의할 때의 자유도가 높다. 
 * 마크업 언어: 태그 등을 이용하여 문서나 데이터의 구조를 명기하는 언어의 한 가지이다.
 * 시맨틱 태그: 
+  
   * <https://maro1992.blog.me/221279119149>
