@@ -380,7 +380,7 @@ firebase deploy : 변경사항 반영
 
 추후 html 에 변경하면 chat 폴더에 가서 다시 firebase deploy 명령하면 적용된다. 
 
-## 개인적 공부
+## 개인 공부
 
 * API
   * application programming interface의 약자에요.
