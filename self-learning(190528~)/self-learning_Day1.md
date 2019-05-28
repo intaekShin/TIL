@@ -1,6 +1,6 @@
 <https://blog.naver.com/PostView.nhn?blogId=heosj95&logNo=221381872962&from=search&redirect=Log&widgetTypeCall=true&topReferer=https%3A%2F%2Fsearch.naver.com%2Fsearch.naver%3Fsm%3Dtop_hty%26fbm%3D1%26ie%3Dutf8%26query%3D%25EB%25B6%2580%25EB%258F%2599%2B%25EC%2586%258C%25EC%2588%2598%25EC%25A0%2590&directAccess=false>
 
-알아두면 쓸데많은 C언어 잡학사전 3. 고정소수점, 부동 소수점 표현
+알아두면 쓸데많은 C언어 잡학사전 3. 고정소수점, 부동 소수점 표현.
 
 ---
 
